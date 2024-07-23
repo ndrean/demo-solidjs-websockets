@@ -249,7 +249,7 @@ The used the "context" pattern to centralize everything related to the configura
 For example, `userSocket` and `useChannel` are declared in the "context". We can them along to any component.
 
 ```js
-(ctx) => function(ctx) => return HTMLComponent
+(ctx) => function(ctx) => return (props) => HTMLComponent
 ```
 
 ```js

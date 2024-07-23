@@ -7,7 +7,7 @@ defmodule Solidjs.Data do
     field :time, :string
     field :type, :string
 
-    timestamps()
+    # timestamps()
   end
 
   @doc false

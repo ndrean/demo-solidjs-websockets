@@ -7,7 +7,7 @@ defmodule Solidjs.Repo.Migrations.CreateDataTable do
       add :time, :string
       add :type, :string
 
-      timestamps()
+      # timestamps()
     end
   end
 end

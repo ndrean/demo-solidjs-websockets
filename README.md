@@ -53,6 +53,7 @@ You should have (at the time of writing):
 
 SolidJS uses JSX for templating, we have to be sure Esbuild compiles the JSX files for SolidJS.
 Phoenix compiles and bundles all `js` and `jsx` files into the "priv/static/assets" folder.
+We also evaluate bundle size mapping.
 
 <details>
 <summary>Build.js file</summary>
@@ -291,6 +292,7 @@ const componentHook = {
   },
 };
 ```
+<img width="1372" alt="Screenshot 2024-07-23 at 20 12 08" src="https://github.com/user-attachments/assets/50cb0255-896b-4cf7-838b-a19ba198a3e6">
 
 ## Bundle size with code splitting
 

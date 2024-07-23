@@ -75,12 +75,9 @@ defmodule Solidjs.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs", "cmd --cd assets pnpm install"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
-      "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind solidjs", "esbuild solidjs"],
       "assets.deploy": [
         "tailwind solidjs --minify",
         "cmd --cd assets node build.js --deploy",
-        # "esbuild solidjs --minify",
         "phx.digest"
       ]
     ]

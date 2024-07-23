@@ -66,7 +66,12 @@ defmodule SolidjsWeb.MainLive do
       <h1 class="text-3xl font-bold text-center">SolidJS</h1>
       <Nav.display />
 
+
+      <h1>When you hover above an image, we pre-fetch data from an API and update the footer of the card once we get the data.</h1>
+      <h2>In a second step, we will run a ML model to describe the image and update the footer with the findings. </h2>
+      <br/>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
         <%= for id <- range() do %>
           <Card.display card_id={Integer.to_string(id)} data={fetch_card_data(@data, id)}/>  
         <% end %>
@@ -80,10 +85,10 @@ defmodule SolidjsWeb.MainLive do
     <div class="container mx-auto">
       <h1 class="text-3xl font-bold text-center">SolidJS</h1>
       <Nav.display />
-
+      <br/>
       <div>
         <h1>This <code>LiveView</code> component receives data from an <code>Elixir</code> WebSocket client</h1>
-        <h2>The data is then displayed in a <code>ChartJS</code> chart component</h2>
+        <h2>The realtime incoming data is then displayed in a <code>ChartJS</code> chart component</h2>
         <div id="chart" phx-hook="chartHook"></div>
       </div>
     </div>
@@ -95,9 +100,10 @@ defmodule SolidjsWeb.MainLive do
    <div class="container mx-auto">
      <h1 class="text-3xl font-bold text-center">SolidJS</h1>
      <Nav.display />
+     <br/>
      <div>
        <h1 ><code>SolidJS</code> standalone component running as a hook</h1>
-       <h2>The component connects to a WebSocket and preprends the new data </h2>
+       <h2>The component connects to a WebSocket and preprends realtime incoming data </h2>
        <br/>
        <div id="table" phx-hook="tableHook" phx-update="ignore"></div>
      </div>

@@ -38,4 +38,8 @@ npm-debug.log
 # Database files
 *.db
 *.db-*
+.env
+
+.elixir-tools
+/test/
 

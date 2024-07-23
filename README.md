@@ -217,7 +217,7 @@ defmodule SolidjsWeb.CurrencyChannel do
   @impl true
   def handle_in("currency:"<>currency,  payload, socket)
       when socket.assigns.currency == currency do
-    IO.puts("from from browser...#{inspect(payload)}")
+    save_to_db(payload)
     {:noreply, socket}
   end
 
@@ -227,6 +227,10 @@ defmodule SolidjsWeb.CurrencyChannel do
       when currency == socket.assigns.currency do
     broadcast!(socket, "update", payload)
     {:noreply, socket}
+  end
+
+  defp save_to_db(payload) do
+
   end
 end
 ```

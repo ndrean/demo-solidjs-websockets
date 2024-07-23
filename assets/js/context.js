@@ -42,7 +42,7 @@ const [options] = createSignal({
     curve: "smooth",
   },
   title: {
-    text: "Dynamic Updating Chart",
+    text: "Dynamic Updating Realtime Chart",
     align: "left",
   },
   markers: {

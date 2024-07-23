@@ -22,9 +22,9 @@ defmodule SolidjsWeb.Nav do
 
   defp menu do
     [
-      chart: "/chart",
-      table: "/table",
-      pics: "/"
+      {"Realtime chart", "/chart"},
+      {"Realtime table", "/table"},
+      {"Describe Pictures", "/"}
     ]
   end
 
@@ -35,7 +35,7 @@ defmodule SolidjsWeb.Nav do
     <.link
       replace
       phx-click={@action}
-      class="p-4 my-4 text-xl md:text-3xl font-bold bg-[bisque] text-[midnightblue] hover:text-blue-700 transition phx-submit-loading:opacity-75 rounded-lg"
+      class="p-4 my-4 text-xl md:text-3xl font-bold bg-[bisque] text-[midnightblue] hover:text-blue-700 transition phx-submit-loading:opacity-75 rounded-lg text-center"
     >
       <%= @tab %>
     </.link>
@@ -44,7 +44,7 @@ defmodule SolidjsWeb.Nav do
 
   def display(assigns) do
     ~H"""
-    <nav class="flex justify-center">
+    <nav class="flex justify-center space-x-4">
       <%= for {tab, uri} <- menu() do%>
         <Nav.tab tab={tab} action={JS.patch(uri)}/>
       <% end %>

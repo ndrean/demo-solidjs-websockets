@@ -1,4 +1,4 @@
-# Solidjs
+# Phoenix LiveView with Solidjs, ApexCharts
 
 ## What is this?
 

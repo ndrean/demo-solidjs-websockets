@@ -249,7 +249,7 @@ The used the **"context" pattern** to centralize everything related to the confi
 For example, `userSocket` and `useChannel` are declared in the "context". We can them along to any component.
 
 ```js
-const component = (ctx) =>  {
+export const component = (ctx) =>  {
   // get stuff from the context
   const {state, setState} = ctx
   [...]
@@ -259,4 +259,13 @@ const component = (ctx) =>  {
   }
 }
 
+```
+
+To use it, do:
+
+```js
+import context from "./context";
+import {componen}t from "./component.jsx"
+
+const Component = component(context);
 ```

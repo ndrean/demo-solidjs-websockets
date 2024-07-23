@@ -269,3 +269,21 @@ import {componen}t from "./component.jsx"
 
 const Component = component(context);
 ```
+
+## Cleanup between SolidJS and LiveView
+
+To properly stop a channel and a websocket connection when you leave a tab that runs these features, we may need to pass a reference from the Javascript hook, and use the "ref.current" (check "table.jsx" and "tableHook.js")
+
+```js
+const componentHook = {
+  channelRef: { current: null },
+  socketRef: { current: null },
+  mounted() {
+    myfunction(channelRef, socketRef);
+  },
+  destroyed() {
+    this.channelRref.leave();
+    this.socketRef.close();
+  },
+};
+```

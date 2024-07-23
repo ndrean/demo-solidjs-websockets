@@ -5,6 +5,7 @@
 A small `Phoenix LiveView` app to showcase:
 
 - navigation with tabs.
+- code splitting,
 - prefetching data on image hovering.
 - include a `SolidJS` component that renders a table with the WebSocket connection to an endpoint to preprend data in realtime. This component sends the data to the server via an `Elixir.Channel` where it is saved into an `SQLite` database.
 - include a `SolidJS` component that uses the lightweight Javascript charting `ApexCharts`. We visualize data sent from a WebSocket client (a server module powered by [Fresh](https://github.com/bunopnu/fresh)). He set a PubSub between the Fresh server and an `Elixir.Channel`, and then push via the Channel to the browser.
@@ -32,7 +33,8 @@ You should have (at the time of writing):
   "@tailwindcss/forms": "^0.5.7",
   "esbuild": "^0.23.0",
   "esbuild-plugin-solid": "^0.6.0",
-  "tailwindcss": "^3.4.6"
+  "tailwindcss": "^3.4.6",
+  "fs": "0.0.1-security",
 },
 "dependencies": {
   "@solid-primitives/refs": "^1.0.8",
@@ -60,6 +62,7 @@ Phoenix compiles and bundles all `js` and `jsx` files into the "priv/static/asse
 
 import { context, build } from "esbuild";
 import { solidPlugin } from "esbuild-plugin-solid";
+import fs from "fs";
 
 const args = process.argv.slice(2);
 const watch = args.includes("--watch");
@@ -85,7 +88,8 @@ if (deploy) {
     minify: true,
     splitting: true,
   };
-  build(opts);
+  let result = await build(opts);
+  fs.writeFileSync("meta.json", JSON.stringify(result.metafile, null, 2));
 }
 
 if (watch) {
@@ -287,3 +291,11 @@ const componentHook = {
   },
 };
 ```
+
+## Bundle size with code splitting
+
+The "build.js" will produce a [metafile](https://esbuild.github.io/api/#metafile) when running `mix assets.deploy`.
+
+Analyse it:
+
+<https://esbuild.github.io/analyze/>

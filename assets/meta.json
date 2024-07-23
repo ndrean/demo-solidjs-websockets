@@ -1,0 +1,949 @@
+{
+  "inputs": {
+    "../deps/phoenix_html/priv/static/phoenix_html.js": {
+      "bytes": 2643,
+      "imports": []
+    },
+    "js/hoverCard.js": {
+      "bytes": 346,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/dist/solid.js": {
+      "bytes": 52013,
+      "imports": [],
+      "format": "esm"
+    },
+    "js/useChannel.js": {
+      "bytes": 354,
+      "imports": [],
+      "format": "esm"
+    },
+    "../deps/phoenix/priv/static/phoenix.mjs": {
+      "bytes": 45555,
+      "imports": [],
+      "format": "esm"
+    },
+    "js/userSocket.js": {
+      "bytes": 131,
+      "imports": [
+        {
+          "path": "../deps/phoenix/priv/static/phoenix.mjs",
+          "kind": "import-statement",
+          "original": "phoenix"
+        }
+      ],
+      "format": "esm"
+    },
+    "js/context.js": {
+      "bytes": 1320,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/dist/solid.js",
+          "kind": "import-statement",
+          "original": "solid-js"
+        },
+        {
+          "path": "js/useChannel.js",
+          "kind": "dynamic-import",
+          "original": "./useChannel"
+        },
+        {
+          "path": "js/userSocket.js",
+          "kind": "dynamic-import",
+          "original": "./userSocket"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js": {
+      "bytes": 28184,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/dist/solid.js",
+          "kind": "import-statement",
+          "original": "solid-js"
+        },
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/dist/solid.js",
+          "kind": "import-statement",
+          "original": "solid-js"
+        }
+      ],
+      "format": "esm"
+    },
+    "js/table.jsx": {
+      "bytes": 7901,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js",
+          "kind": "import-statement",
+          "original": "solid-js/web"
+        },
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js",
+          "kind": "import-statement",
+          "original": "solid-js/web"
+        },
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js",
+          "kind": "import-statement",
+          "original": "solid-js/web"
+        },
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js",
+          "kind": "import-statement",
+          "original": "solid-js/web"
+        },
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js",
+          "kind": "import-statement",
+          "original": "solid-js/web"
+        },
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/dist/solid.js",
+          "kind": "import-statement",
+          "original": "solid-js"
+        }
+      ],
+      "format": "esm"
+    },
+    "js/tableHook.js": {
+      "bytes": 788,
+      "imports": [
+        {
+          "path": "js/context.js",
+          "kind": "dynamic-import",
+          "original": "./context.js"
+        },
+        {
+          "path": "js/table.jsx",
+          "kind": "dynamic-import",
+          "original": "./table.jsx"
+        },
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js",
+          "kind": "dynamic-import",
+          "original": "solid-js/web"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/apexcharts@3.51.0/node_modules/apexcharts/dist/apexcharts.esm.js": {
+      "bytes": 533695,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/store/dist/store.js": {
+      "bytes": 15459,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/dist/solid.js",
+          "kind": "import-statement",
+          "original": "solid-js"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/defu@6.1.4/node_modules/defu/dist/defu.mjs": {
+      "bytes": 2052,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/solid-apexcharts@0.3.4_apexcharts@3.51.0_solid-js@1.8.18/node_modules/solid-apexcharts/dist/index.js": {
+      "bytes": 1882,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js",
+          "kind": "import-statement",
+          "original": "solid-js/web"
+        },
+        {
+          "path": "node_modules/.pnpm/apexcharts@3.51.0/node_modules/apexcharts/dist/apexcharts.esm.js",
+          "kind": "import-statement",
+          "original": "apexcharts/dist/apexcharts.esm.js"
+        },
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/dist/solid.js",
+          "kind": "import-statement",
+          "original": "solid-js"
+        },
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/store/dist/store.js",
+          "kind": "import-statement",
+          "original": "solid-js/store"
+        },
+        {
+          "path": "node_modules/.pnpm/defu@6.1.4/node_modules/defu/dist/defu.mjs",
+          "kind": "import-statement",
+          "original": "defu"
+        }
+      ],
+      "format": "esm"
+    },
+    "js/chart.jsx": {
+      "bytes": 2385,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js",
+          "kind": "import-statement",
+          "original": "solid-js/web"
+        },
+        {
+          "path": "node_modules/.pnpm/solid-apexcharts@0.3.4_apexcharts@3.51.0_solid-js@1.8.18/node_modules/solid-apexcharts/dist/index.js",
+          "kind": "dynamic-import",
+          "original": "solid-apexcharts"
+        },
+        {
+          "path": "js/context.js",
+          "kind": "dynamic-import",
+          "original": "./context.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "js/chartHook.js": {
+      "bytes": 838,
+      "imports": [
+        {
+          "path": "js/context.js",
+          "kind": "dynamic-import",
+          "original": "./context.js"
+        },
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/dist/solid.js",
+          "kind": "dynamic-import",
+          "original": "solid-js"
+        },
+        {
+          "path": "js/chart.jsx",
+          "kind": "dynamic-import",
+          "original": "./chart.jsx"
+        },
+        {
+          "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js",
+          "kind": "dynamic-import",
+          "original": "solid-js/web"
+        }
+      ],
+      "format": "esm"
+    },
+    "../deps/phoenix_live_view/priv/static/phoenix_live_view.esm.js": {
+      "bytes": 176307,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/topbar@3.0.0/node_modules/topbar/topbar.min.js": {
+      "bytes": 2839,
+      "imports": [],
+      "format": "cjs"
+    },
+    "js/app.js": {
+      "bytes": 1361,
+      "imports": [
+        {
+          "path": "../deps/phoenix_html/priv/static/phoenix_html.js",
+          "kind": "import-statement",
+          "original": "phoenix_html"
+        },
+        {
+          "path": "js/hoverCard.js",
+          "kind": "dynamic-import",
+          "original": "./hoverCard.js"
+        },
+        {
+          "path": "js/tableHook.js",
+          "kind": "dynamic-import",
+          "original": "./tableHook.js"
+        },
+        {
+          "path": "js/chartHook.js",
+          "kind": "dynamic-import",
+          "original": "./chartHook.js"
+        },
+        {
+          "path": "../deps/phoenix/priv/static/phoenix.mjs",
+          "kind": "dynamic-import",
+          "original": "phoenix"
+        },
+        {
+          "path": "../deps/phoenix_live_view/priv/static/phoenix_live_view.esm.js",
+          "kind": "dynamic-import",
+          "original": "phoenix_live_view"
+        },
+        {
+          "path": "node_modules/.pnpm/topbar@3.0.0/node_modules/topbar/topbar.min.js",
+          "kind": "dynamic-import",
+          "original": "topbar"
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "../priv/static/assets/table-IWPZMUJH.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-3PJRXLV5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/chunk-7YO7TKCO.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "getCrypto"
+      ],
+      "entryPoint": "js/table.jsx",
+      "inputs": {
+        "js/table.jsx": {
+          "bytesInOutput": 939
+        }
+      },
+      "bytes": 1106
+    },
+    "../priv/static/assets/tableHook-LQ7RV7YT.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/context-KXHIYGBD.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "../priv/static/assets/table-IWPZMUJH.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "../priv/static/assets/web-PHZV6L65.js",
+          "kind": "dynamic-import"
+        }
+      ],
+      "exports": [
+        "tableHook"
+      ],
+      "entryPoint": "js/tableHook.js",
+      "inputs": {
+        "js/tableHook.js": {
+          "bytesInOutput": 537
+        }
+      },
+      "bytes": 589
+    },
+    "../priv/static/assets/dist-Z35BCN4G.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-3PJRXLV5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/chunk-7YO7TKCO.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "SolidApexCharts",
+        "createApexCharts"
+      ],
+      "entryPoint": "node_modules/.pnpm/solid-apexcharts@0.3.4_apexcharts@3.51.0_solid-js@1.8.18/node_modules/solid-apexcharts/dist/index.js",
+      "inputs": {
+        "node_modules/.pnpm/apexcharts@3.51.0/node_modules/apexcharts/dist/apexcharts.esm.js": {
+          "bytesInOutput": 531552
+        },
+        "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/store/dist/store.js": {
+          "bytesInOutput": 690
+        },
+        "node_modules/.pnpm/defu@6.1.4/node_modules/defu/dist/defu.mjs": {
+          "bytesInOutput": 823
+        },
+        "node_modules/.pnpm/solid-apexcharts@0.3.4_apexcharts@3.51.0_solid-js@1.8.18/node_modules/solid-apexcharts/dist/index.js": {
+          "bytesInOutput": 679
+        }
+      },
+      "bytes": 534131
+    },
+    "../priv/static/assets/chart-E422IDLX.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-3PJRXLV5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/chunk-7YO7TKCO.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/dist-Z35BCN4G.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "../priv/static/assets/context-KXHIYGBD.js",
+          "kind": "dynamic-import"
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "entryPoint": "js/chart.jsx",
+      "inputs": {
+        "js/chart.jsx": {
+          "bytesInOutput": 297
+        }
+      },
+      "bytes": 415
+    },
+    "../priv/static/assets/chartHook-XNVN5IXK.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/context-KXHIYGBD.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "../priv/static/assets/solid-2AJCC4BV.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "../priv/static/assets/chart-E422IDLX.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "../priv/static/assets/web-PHZV6L65.js",
+          "kind": "dynamic-import"
+        }
+      ],
+      "exports": [
+        "chartHook"
+      ],
+      "entryPoint": "js/chartHook.js",
+      "inputs": {
+        "js/chartHook.js": {
+          "bytesInOutput": 557
+        }
+      },
+      "bytes": 609
+    },
+    "../priv/static/assets/phoenix_live_view.esm-IYMXJ3LJ.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "LiveSocket",
+        "isUsedInput"
+      ],
+      "entryPoint": "../deps/phoenix_live_view/priv/static/phoenix_live_view.esm.js",
+      "inputs": {
+        "../deps/phoenix_live_view/priv/static/phoenix_live_view.esm.js": {
+          "bytesInOutput": 89542
+        }
+      },
+      "bytes": 89614
+    },
+    "../priv/static/assets/topbar.min-2Z4IKDFW.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "entryPoint": "node_modules/.pnpm/topbar@3.0.0/node_modules/topbar/topbar.min.js",
+      "inputs": {
+        "node_modules/.pnpm/topbar@3.0.0/node_modules/topbar/topbar.min.js": {
+          "bytesInOutput": 1960
+        }
+      },
+      "bytes": 2201
+    },
+    "../priv/static/assets/app.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/hoverCard-ZGPHKIRS.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "../priv/static/assets/tableHook-LQ7RV7YT.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "../priv/static/assets/chartHook-XNVN5IXK.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "../priv/static/assets/phoenix-YRCDFGUE.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "../priv/static/assets/phoenix_live_view.esm-IYMXJ3LJ.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "../priv/static/assets/topbar.min-2Z4IKDFW.js",
+          "kind": "dynamic-import"
+        }
+      ],
+      "exports": [],
+      "entryPoint": "js/app.js",
+      "inputs": {
+        "../deps/phoenix_html/priv/static/phoenix_html.js": {
+          "bytesInOutput": 1418
+        },
+        "js/app.js": {
+          "bytesInOutput": 787
+        }
+      },
+      "bytes": 2206
+    },
+    "../priv/static/assets/hoverCard-ZGPHKIRS.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "hoverCard"
+      ],
+      "entryPoint": "js/hoverCard.js",
+      "inputs": {
+        "js/hoverCard.js": {
+          "bytesInOutput": 228
+        }
+      },
+      "bytes": 280
+    },
+    "../priv/static/assets/solid-2AJCC4BV.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-7YO7TKCO.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "$DEVCOMP",
+        "$PROXY",
+        "$TRACK",
+        "DEV",
+        "ErrorBoundary",
+        "For",
+        "Index",
+        "Match",
+        "Show",
+        "Suspense",
+        "SuspenseList",
+        "Switch",
+        "batch",
+        "cancelCallback",
+        "catchError",
+        "children",
+        "createComponent",
+        "createComputed",
+        "createContext",
+        "createDeferred",
+        "createEffect",
+        "createMemo",
+        "createReaction",
+        "createRenderEffect",
+        "createResource",
+        "createRoot",
+        "createSelector",
+        "createSignal",
+        "createUniqueId",
+        "enableExternalSource",
+        "enableHydration",
+        "enableScheduling",
+        "equalFn",
+        "from",
+        "getListener",
+        "getOwner",
+        "indexArray",
+        "lazy",
+        "mapArray",
+        "mergeProps",
+        "observable",
+        "on",
+        "onCleanup",
+        "onError",
+        "onMount",
+        "requestCallback",
+        "resetErrorBoundaries",
+        "runWithOwner",
+        "sharedConfig",
+        "splitProps",
+        "startTransition",
+        "untrack",
+        "useContext",
+        "useTransition"
+      ],
+      "entryPoint": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/dist/solid.js",
+      "inputs": {},
+      "bytes": 1054
+    },
+    "../priv/static/assets/useChannel-DDB4GWEU.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "entryPoint": "js/useChannel.js",
+      "inputs": {
+        "js/useChannel.js": {
+          "bytesInOutput": 201
+        }
+      },
+      "bytes": 251
+    },
+    "../priv/static/assets/phoenix-YRCDFGUE.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-DGCCEDZ4.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "Channel",
+        "LongPoll",
+        "Presence",
+        "Serializer",
+        "Socket"
+      ],
+      "entryPoint": "../deps/phoenix/priv/static/phoenix.mjs",
+      "inputs": {},
+      "bytes": 149
+    },
+    "../priv/static/assets/userSocket-5PNTV4NS.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-DGCCEDZ4.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "entryPoint": "js/userSocket.js",
+      "inputs": {
+        "js/userSocket.js": {
+          "bytesInOutput": 46
+        }
+      },
+      "bytes": 131
+    },
+    "../priv/static/assets/chunk-DGCCEDZ4.js": {
+      "imports": [],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "inputs": {
+        "../deps/phoenix/priv/static/phoenix.mjs": {
+          "bytesInOutput": 22132
+        }
+      },
+      "bytes": 22176
+    },
+    "../priv/static/assets/context-KXHIYGBD.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-7YO7TKCO.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/useChannel-DDB4GWEU.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "../priv/static/assets/userSocket-5PNTV4NS.js",
+          "kind": "dynamic-import"
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "entryPoint": "js/context.js",
+      "inputs": {
+        "js/context.js": {
+          "bytesInOutput": 702
+        }
+      },
+      "bytes": 792
+    },
+    "../priv/static/assets/web-PHZV6L65.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-3PJRXLV5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/chunk-7YO7TKCO.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "../priv/static/assets/chunk-UJVVLSSD.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "Aliases",
+        "Assets",
+        "ChildProperties",
+        "DOMElements",
+        "DelegatedEvents",
+        "Dynamic",
+        "ErrorBoundary",
+        "For",
+        "Hydration",
+        "HydrationScript",
+        "Index",
+        "Match",
+        "NoHydration",
+        "Portal",
+        "Properties",
+        "RequestContext",
+        "SVGElements",
+        "SVGNamespace",
+        "Show",
+        "Suspense",
+        "SuspenseList",
+        "Switch",
+        "addEventListener",
+        "assign",
+        "classList",
+        "className",
+        "clearDelegatedEvents",
+        "createComponent",
+        "delegateEvents",
+        "dynamicProperty",
+        "effect",
+        "escape",
+        "generateHydrationScript",
+        "getAssets",
+        "getHydrationKey",
+        "getNextElement",
+        "getNextMarker",
+        "getNextMatch",
+        "getOwner",
+        "getPropAlias",
+        "getRequestEvent",
+        "hydrate",
+        "innerHTML",
+        "insert",
+        "isDev",
+        "isServer",
+        "memo",
+        "mergeProps",
+        "render",
+        "renderToStream",
+        "renderToString",
+        "renderToStringAsync",
+        "resolveSSRNode",
+        "runHydrationEvents",
+        "setAttribute",
+        "setAttributeNS",
+        "setProperty",
+        "spread",
+        "ssr",
+        "ssrAttribute",
+        "ssrClassList",
+        "ssrElement",
+        "ssrHydrationKey",
+        "ssrSpread",
+        "ssrStyle",
+        "style",
+        "template",
+        "untrack",
+        "use",
+        "useAssets"
+      ],
+      "entryPoint": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js",
+      "inputs": {},
+      "bytes": 1720
+    },
+    "../priv/static/assets/chunk-3PJRXLV5.js": {
+      "imports": [
+        {
+          "path": "../priv/static/assets/chunk-7YO7TKCO.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z"
+      ],
+      "inputs": {
+        "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js": {
+          "bytesInOutput": 13601
+        }
+      },
+      "bytes": 14117
+    },
+    "../priv/static/assets/chunk-7YO7TKCO.js": {
+      "imports": [],
+      "exports": [
+        "$",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "_",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z"
+      ],
+      "inputs": {
+        "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/dist/solid.js": {
+          "bytesInOutput": 20683
+        }
+      },
+      "bytes": 21117
+    },
+    "../priv/static/assets/chunk-UJVVLSSD.js": {
+      "imports": [],
+      "exports": [
+        "a"
+      ],
+      "inputs": {},
+      "bytes": 78
+    }
+  }
+}

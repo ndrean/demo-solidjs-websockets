@@ -79,7 +79,7 @@ defmodule Solidjs.MixProject do
       "assets.build": ["tailwind solidjs", "esbuild solidjs"],
       "assets.deploy": [
         "tailwind solidjs --minify",
-        "cmd -cd assets node build.js --deploy",
+        "cmd --cd assets node build.js --deploy",
         # "esbuild solidjs --minify",
         "phx.digest"
       ]

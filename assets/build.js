@@ -1,5 +1,6 @@
 import { context, build } from "esbuild";
 import { solidPlugin } from "esbuild-plugin-solid";
+import fs from "fs";
 
 const args = process.argv.slice(2);
 const watch = args.includes("--watch");
@@ -24,8 +25,10 @@ if (deploy) {
     ...opts,
     minify: true,
     splitting: true,
+    metafile: true,
   };
-  build(opts);
+  let result = await build(opts);
+  fs.writeFileSync("meta.json", JSON.stringify(result.metafile, null, 2));
 }
 
 if (watch) {

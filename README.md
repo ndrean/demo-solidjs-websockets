@@ -292,7 +292,7 @@ const componentHook = {
   },
 };
 ```
-<img width="1372" alt="Screenshot 2024-07-23 at 20 12 08" src="https://github.com/user-attachments/assets/50cb0255-896b-4cf7-838b-a19ba198a3e6">
+
 
 ## Bundle size with code splitting
 
@@ -301,3 +301,7 @@ The "build.js" will produce a [metafile](https://esbuild.github.io/api/#metafile
 Analyse it:
 
 <https://esbuild.github.io/analyze/>
+
+This displays:
+
+<img width="1372" alt="Screenshot 2024-07-23 at 20 12 08" src="https://github.com/user-attachments/assets/50cb0255-896b-4cf7-838b-a19ba198a3e6">

@@ -249,9 +249,9 @@ end
 
 ## Javascript components
 
-The used the **"context" pattern** to centralize everything related to the configuration and state.
+The used the **"context" pattern**: you parametrize a function that returns a Component.
 
-For example, `userSocket` and `useChannel` are declared in the "context". We can them along to any component.
+The pattern is:
 
 ```js
 export const component = (ctx) =>  {
@@ -274,6 +274,13 @@ import {componen}t from "./component.jsx"
 
 const Component = component(context);
 ```
+
+You want to design a component as stateless as possible. You centralize everything related to the configuration, styles.
+
+Local state is still possible though if it only belongs to this component where reactivity is need.
+
+For example, `userSocket` and `useChannel` are declared in the "context". We can use them in any component.
+
 
 ## Cleanup between SolidJS and LiveView
 

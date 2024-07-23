@@ -6,7 +6,7 @@ A small `Phoenix LiveView` app to showcase:
 
 - navigation with tabs.
 - prefetching data on image hovering.
-- include a `SolidJS` component that renders a table with the WebSocket connection to an endpoint to preprend data in realtime. This component can send the data to the server.
+- include a `SolidJS` component that renders a table with the WebSocket connection to an endpoint to preprend data in realtime. This component sends the data to the server via an `Elixir.Channel` where it is saved into an `SQLite` database.
 - include a `SolidJS` component that uses the lightweight Javascript charting `ApexCharts`. We visualize data sent from a WebSocket client (a server module powered by [Fresh](https://github.com/bunopnu/fresh)). He set a PubSub between the Fresh server and an `Elixir.Channel`, and then push via the Channel to the browser.
 
 ## Esbuild plugins

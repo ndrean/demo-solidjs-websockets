@@ -244,20 +244,19 @@ end
 
 ## Javascript components
 
-The used the "context" pattern to centralize everything related to the configuration and state.
+The used the **"context" pattern** to centralize everything related to the configuration and state.
 
 For example, `userSocket` and `useChannel` are declared in the "context". We can them along to any component.
 
 ```js
-(ctx) => function(ctx) => return (props) => HTMLComponent
-```
-
-```js
-
-const component = (ctx) => {
+const component = (ctx) =>  {
+  // get stuff from the context
   const {state, setState} = ctx
-  return (props) => {
-    <JSXComponent>
+  [...]
+  return Component(props) {
+    do stuff...;
+    return HTMLComponent
   }
 }
+
 ```

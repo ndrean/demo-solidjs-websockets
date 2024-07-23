@@ -247,9 +247,9 @@ end
 
 </details>
 
-## Javascript components
+## Javascript components with context pattern
 
-The used the **"context" pattern**: you parametrize a function that returns a Component.
+We used the **"context" pattern**: you parametrize a function that returns a Component.
 
 The pattern is:
 

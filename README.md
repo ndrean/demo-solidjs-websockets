@@ -15,6 +15,8 @@ We are going to use `Esbuild` plugins. This is explained [in the documentation](
 
 ### Package.json
 
+Besides bringing in `esbuild` and `tailwind`, we use `solidjs` and `apexcharts`.
+
 At the time of writting, you have:
 
 ```bash
@@ -104,6 +106,8 @@ if (watch) {
 </details>
 <br/>
 
+In "config/dev/exs", add:
+
 ```elixir
 # config/devs.exs
 
@@ -120,6 +124,8 @@ watchers: [
   tailwind: {Tailwind, :install_and_run, [:solidjs, ~w(--watch)]}
 ]
 ```
+
+and remove the config for "esbuild" (as `node` will run `esbuild`).
 
 ## Start
 
@@ -158,13 +164,13 @@ export default function useChannel(socket, topic) {
 
 To establish the socket and channel, we do:
 
-- client-side:
+- connect client-side:
 
 ```js
-const myhannel = useChannel(userSocket, "myptopic");
+const mychannel = useChannel(userSocket, "myptopic");
 ```
 
-- server-side:
+- define the "userSocket" server-side:
 
 ```elixir
 # add to endpoint.ex
@@ -175,7 +181,7 @@ socket "/socket", SolidjsWeb.UserSocket,
 and
 
 <details>
-<summary> create the "user_socket.ex" file wher you declare the channels you will use </summary>
+<summary> and create the "user_socket.ex" file where you declare the channels you will use </summary>
 
 ```elixir
 # create user_socket.ex
@@ -183,7 +189,6 @@ defmodule SolidjsWeb.UserSocket do
   use Phoenix.Socket
 
   channel "currency:*", SolidjsWeb.CurrencyChannel
-  channel "counter", SolidjsWeb.CountChannel
 
   @impl true
   def connect(_params, socket) do
@@ -236,3 +241,23 @@ end
 ```
 
 </details>
+
+## Javascript components
+
+The used the "context" pattern to centralize everything related to the configuration and state.
+
+For example, `userSocket` and `useChannel` are declared in the "context". We can them along to any component.
+
+```js
+(ctx) => function(ctx) => return HTMLComponent
+```
+
+```js
+
+const component = (ctx) => {
+  const {state, setState} = ctx
+  return (props) => {
+    <JSXComponent>
+  }
+}
+```

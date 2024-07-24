@@ -73,7 +73,7 @@
       "format": "esm"
     },
     "js/table.jsx": {
-      "bytes": 7901,
+      "bytes": 8277,
       "imports": [
         {
           "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js",
@@ -109,7 +109,7 @@
       "format": "esm"
     },
     "js/tableHook.js": {
-      "bytes": 788,
+      "bytes": 803,
       "imports": [
         {
           "path": "js/context.js",
@@ -182,7 +182,7 @@
       "format": "esm"
     },
     "js/chart.jsx": {
-      "bytes": 2385,
+      "bytes": 2685,
       "imports": [
         {
           "path": "node_modules/.pnpm/solid-js@1.8.18/node_modules/solid-js/web/dist/web.js",
@@ -281,7 +281,7 @@
     }
   },
   "outputs": {
-    "../priv/static/assets/table-IWPZMUJH.js": {
+    "../priv/static/assets/table-FIHYGUXW.js": {
       "imports": [
         {
           "path": "../priv/static/assets/chunk-3PJRXLV5.js",
@@ -302,12 +302,12 @@
       "entryPoint": "js/table.jsx",
       "inputs": {
         "js/table.jsx": {
-          "bytesInOutput": 939
+          "bytesInOutput": 954
         }
       },
-      "bytes": 1106
+      "bytes": 1121
     },
-    "../priv/static/assets/tableHook-LQ7RV7YT.js": {
+    "../priv/static/assets/tableHook-IQWWSEZQ.js": {
       "imports": [
         {
           "path": "../priv/static/assets/chunk-UJVVLSSD.js",
@@ -318,7 +318,7 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "../priv/static/assets/table-IWPZMUJH.js",
+          "path": "../priv/static/assets/table-FIHYGUXW.js",
           "kind": "dynamic-import"
         },
         {
@@ -332,10 +332,10 @@
       "entryPoint": "js/tableHook.js",
       "inputs": {
         "js/tableHook.js": {
-          "bytesInOutput": 537
+          "bytesInOutput": 552
         }
       },
-      "bytes": 589
+      "bytes": 604
     },
     "../priv/static/assets/dist-Z35BCN4G.js": {
       "imports": [
@@ -373,7 +373,7 @@
       },
       "bytes": 534131
     },
-    "../priv/static/assets/chart-E422IDLX.js": {
+    "../priv/static/assets/chart-VIL6CDYJ.js": {
       "imports": [
         {
           "path": "../priv/static/assets/chunk-3PJRXLV5.js",
@@ -402,12 +402,12 @@
       "entryPoint": "js/chart.jsx",
       "inputs": {
         "js/chart.jsx": {
-          "bytesInOutput": 297
+          "bytesInOutput": 328
         }
       },
-      "bytes": 415
+      "bytes": 446
     },
-    "../priv/static/assets/chartHook-XNVN5IXK.js": {
+    "../priv/static/assets/chartHook-AUHSFJDU.js": {
       "imports": [
         {
           "path": "../priv/static/assets/chunk-UJVVLSSD.js",
@@ -422,7 +422,7 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "../priv/static/assets/chart-E422IDLX.js",
+          "path": "../priv/static/assets/chart-VIL6CDYJ.js",
           "kind": "dynamic-import"
         },
         {
@@ -485,11 +485,11 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "../priv/static/assets/tableHook-LQ7RV7YT.js",
+          "path": "../priv/static/assets/tableHook-IQWWSEZQ.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "../priv/static/assets/chartHook-XNVN5IXK.js",
+          "path": "../priv/static/assets/chartHook-AUHSFJDU.js",
           "kind": "dynamic-import"
         },
         {

@@ -218,9 +218,11 @@ For example, `userSocket` and `useChannel` are declared in the "context". We can
 
 ## Re-usable channels client-side
 
-To establish the "user socket" and channel, we firstly build the userSocket client endpoint:
+To establish the "user socket" and channel, we firstly build the userSocket client endpoint
 
 - connect client-side:
+
+:exclamation:note that we did not pass a "user-token" as an object in the `new Socket` constructor, but this should be the case).
 
 ```js
 import { Socket } from "phoenix";

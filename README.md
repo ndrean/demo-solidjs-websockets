@@ -360,3 +360,8 @@ Analyse it:
 This displays:
 
 <img width="1372" alt="Screenshot 2024-07-23 at 20 12 08" src="https://github.com/user-attachments/assets/50cb0255-896b-4cf7-838b-a19ba198a3e6">
+
+The details without ApexCharts:
+<img width="1106" alt="Screenshot 2024-07-24 at 10 02 32" src="https://github.com/user-attachments/assets/6c323f59-32f0-4dee-b8de-66b529b39ef6">
+
+

@@ -17,9 +17,6 @@ importers:
       apexcharts:
         specifier: ^3.51.0
         version: 3.51.0
-      fs:
-        specifier: 0.0.1-security
-        version: 0.0.1-security
       phoenix:
         specifier: link:../deps/phoenix
         version: link:../deps/phoenix
@@ -27,8 +24,8 @@ importers:
         specifier: link:../deps/phoenix_html
         version: link:../deps/phoenix_html
       phoenix_live_view:
-        specifier: link:../phoenix_live_view
-        version: link:../phoenix_live_view
+        specifier: link:../deps/phoenix_live_view
+        version: link:../deps/phoenix_live_view
       solid-apexcharts:
         specifier: ^0.3.4
         version: 0.3.4(apexcharts@3.51.0)(solid-js@1.8.18)
@@ -48,6 +45,9 @@ importers:
       esbuild-plugin-solid:
         specifier: ^0.6.0
         version: 0.6.0(esbuild@0.23.0)(solid-js@1.8.18)
+      fs:
+        specifier: 0.0.1-security
+        version: 0.0.1-security
       tailwindcss:
         specifier: ^3.4.6
         version: 3.4.6

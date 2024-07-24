@@ -19,7 +19,7 @@ export const tableHook = {
     render(() => CryptoTable({ crypto: "bitcoin" }), tableId);
   },
   destroyed() {
-    console.log("destroyed");
+    console.log("close socket and channel");
     this.cryptoSocketRef.current.close();
     this.cryptoSocketRef.current = null;
     this.channelRef.current.leave();

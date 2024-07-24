@@ -28,7 +28,7 @@ if (deploy) {
     metafile: true,
   };
   let result = await build(opts);
-  fs.writeFileSync("meta.json", JSON.stringify(result.metafile, null, 2));
+  fs.writeFileSync("meta.json", JSON.stringify(result.metafile));
 }
 
 if (watch) {

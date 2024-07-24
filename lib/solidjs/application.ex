@@ -17,7 +17,6 @@ defmodule Solidjs.Application do
       {DNSCluster, query: Application.get_env(:solidjs, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: MyPubsub},
       {DynamicSupervisor, name: DynSup, strategy: :one_for_one},
-      # {Solidjs.Streamer, uri: "wss://ws.coincap.io/prices?assets=bitcoin", state: %{symbol: "bitcoin"}},
       {Finch, name: Solidjs.Finch},
       SolidjsWeb.Endpoint
     ]

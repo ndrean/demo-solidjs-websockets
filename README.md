@@ -117,62 +117,115 @@ In "config/dev/exs", add:
 # config/devs.exs
 
 config :solidjs, SolidjsWeb.Endpoint,
-http: [ip: {127, 0, 0, 1}, port: 4000],
-check_origin: false,
-code_reloader: true,
-debug_errors: true,
-secret_key_base: "aaiv+mgJIO4sLLpE7GUxg45/HQeETt98/a8ff6zlCwPEd4mOYSzDU7UEWoLyuzzv",
-watchers: [
-  node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)],
-  ^^^
-  esbuild: {Esbuild, :install_and_run, [:solidjs, ~w(--sourcemap=inline --watch)]},
-  tailwind: {Tailwind, :install_and_run, [:solidjs, ~w(--watch)]}
-]
+  http: [ip: {127, 0, 0, 1}, port: 4000],
+  check_origin: false,
+  code_reloader: true,
+  debug_errors: true,
+  secret_key_base: "aaiv+mgJIO4sLLpE7GUxg45/HQeETt98/a8ff6zlCwPEd4mOYSzDU7UEWoLyuzzv",
+  watchers: [
+    node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)],
+    ^^^
+    tailwind: {Tailwind, :install_and_run, [:solidjs, ~w(--watch)]}
+  ]
 ```
 
 and remove the config for "esbuild" (as `node` will run `esbuild`).
 
-## Start
+The `Mix` tasks in the "mix.exs" file are:
 
-```bash
-mix ecto.setup
-iex -s mix phx.server
+```elixir
+# mix.exs
+
+defp aliases do
+  [
+    setup: ["deps.get", "ecto.setup", "assets.setup", "assets.build"],
+    "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs", "cmd --cd assets pnpm install"],
+    "ecto.reset": ["ecto.drop", "ecto.setup"],
+    test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
+    "assets.deploy": [
+      "tailwind solidjs --minify",
+      "cmd --cd assets node build.js --deploy",
+      "phx.digest"
+    ]
+  ]
+end
 ```
 
-## Re-usable channels client-side
+## Tab navigation
 
-```js
-// userSocket.js
-import { Socket } from "phoenix";
-const userSocket = new Socket("/socket", {});
-userSocket.connect();
-export default userSocket;
+- In the `handle_params/3` callback, parse the "uri" argument and add a `live_action` assign accordingly. For example, we want to navigate to "/chart", we add `live_action: :chart`.
+- In the router, add the routes corresponding to the tabs, such as:
+
+```elixir
+live "/chart", MainLive, :chart
 ```
 
-and the `useChannel` is:
+- add a `render/1` with a guard clause to render the appropriate markup.
+
+```elixir
+def render(assigns) when assigns.live_action == :chart do
+  ~H"""
+   .....
+  """
+end
+```
+
+The navigation action is triggered by a link that looks like:
+
+```elixir
+<.link
+  replace
+  phx-click={JS.patch(uri)}
+  class="..."
+>
+  Go the chart
+</.link>
+```
+
+## Javascript components with context pattern
+
+We used the **"context" pattern**: you parametrize a function that returns a Component.
+
+The pattern is:
 
 ```js
-export default function useChannel(socket, topic) {
-  if (!socket) return null;
-  const channel = socket.channel(topic, {});
-  channel
-    .join()
-    .receive("ok", () => {
-      console.log(`Joined successfully: ${topic}`);
-    })
-    .receive("error", (resp) => {
-      console.log(`Unable to join ${topic}`, resp.reason);
-    });
-  return channel;
+export const component = (ctx) =>  {
+  // get stuff from the context
+  const {state, setState} = ctx
+  [...]
+  return Component(props) {
+    do stuff...;
+    return HTMLComponent
+  }
 }
 ```
 
-To establish the socket and channel, we do:
+To use it, do:
+
+```js
+import context from "./context";
+import {componen}t from "./component.jsx"
+
+const Component = component(context);
+```
+
+You want to design a component as stateless as possible. You centralize everything related to the configuration, styles.
+
+Local state is still possible though if it only belongs to this component where reactivity is need.
+
+For example, `userSocket` and `useChannel` are declared in the "context". We can use them in any component.
+
+## Re-usable channels client-side
+
+To establish the "user socket" and channel, we firstly build the userSocket client endpoint:
 
 - connect client-side:
 
 ```js
-const mychannel = useChannel(userSocket, "myptopic");
+import { Socket } from "phoenix";
+const userSocket = new Socket("/socket", {});
+userSocket.connect();
+export default userSocket;
 ```
 
 - define the "userSocket" server-side:
@@ -183,10 +236,7 @@ socket "/socket", SolidjsWeb.UserSocket,
     websocket: true,
 ```
 
-and
-
-<details>
-<summary> and create the "user_socket.ex" file where you declare the channels you will use </summary>
+- define the server-side handler:
 
 ```elixir
 # create user_socket.ex
@@ -205,11 +255,37 @@ defmodule SolidjsWeb.UserSocket do
 end
 ```
 
-</details>
-<br/>
+Note that we already declared the channels we will use in this module. For example, `CurrencyChannel` with the topics "currecny:\*".
+
+To establish channels on top of the "user socket", we define a generic `useChannel` client-side function:
+
+```js
+// userChannel.js
+
+export default function useChannel(socket, topic) {
+  if (!socket) return null;
+  const channel = socket.channel(topic, {});
+  channel
+    .join()
+    .receive("ok", () => {
+      console.log(`Joined successfully: ${topic}`);
+    })
+    .receive("error", (resp) => {
+      console.log(`Unable to join ${topic}`, resp.reason);
+    });
+  return channel;
+}
+```
+
+To use it, we add the topic client-side which matches the one declared in "user_socket.ex".
+
+```js
+import userSocket from "./context";
+const currencyChannel = useChannel(userSocket, "currency:bitcoin");
+```
 
 <details>
-<summary> An example of a channel where we subscribed to a `Phoenix.PubSub` topic, have a listener on this topic, and forward the data to the browser</summary>
+<summary> It remains to build the channel "CurrencyChannel" with this topic server-side. An example here</summary>
 
 ```elixir
 defmodule SolidjsWeb.CurrencyChannel do
@@ -232,6 +308,7 @@ defmodule SolidjsWeb.CurrencyChannel do
   end
 
   @impl true
+  # received as we subscribed to a PubSub topic
   # brodcasted FROM the WebSocket client Solidjs.Streamer, then forward TO the browser chartHook via the channel
   def handle_info(%{topic: "streamer:"<>currency, event: "update", payload: payload}, socket)
       when currency == socket.assigns.currency do
@@ -240,58 +317,25 @@ defmodule SolidjsWeb.CurrencyChannel do
   end
 
   defp save_to_db(payload) do
-
+    Solidjs.Repo.save(payload)
   end
 end
 ```
 
 </details>
-
-## Javascript components with context pattern
-
-We used the **"context" pattern**: you parametrize a function that returns a Component.
-
-The pattern is:
-
-```js
-export const component = (ctx) =>  {
-  // get stuff from the context
-  const {state, setState} = ctx
-  [...]
-  return Component(props) {
-    do stuff...;
-    return HTMLComponent
-  }
-}
-
-```
-
-To use it, do:
-
-```js
-import context from "./context";
-import {componen}t from "./component.jsx"
-
-const Component = component(context);
-```
-
-You want to design a component as stateless as possible. You centralize everything related to the configuration, styles.
-
-Local state is still possible though if it only belongs to this component where reactivity is need.
-
-For example, `userSocket` and `useChannel` are declared in the "context". We can use them in any component.
-
+<br/>
 
 ## Cleanup between SolidJS and LiveView
 
-To properly stop a channel and a websocket connection when you leave a tab that runs these features, we may need to pass a reference from the Javascript hook, and use the "ref.current" (check "table.jsx" and "tableHook.js")
+`LiveView` shadows the `SolidJS` method `onCleanup`.
+To properly stop a channel and a websocket connection when you leave a tab that runs these features, we may need to pass a reference from the Javascript hook, and use the "ref.current" in the `destroyed` hook lifecycle (check "table.jsx" and "tableHook.js")
 
 ```js
 const componentHook = {
   channelRef: { current: null },
   socketRef: { current: null },
   mounted() {
-    myfunction(channelRef, socketRef);
+    Component(channelRef, socketRef);
   },
   destroyed() {
     this.channelRref.leave();
@@ -299,7 +343,6 @@ const componentHook = {
   },
 };
 ```
-
 
 ## Bundle size with code splitting
 

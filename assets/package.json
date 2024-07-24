@@ -23,7 +23,7 @@
     "apexcharts": "^3.51.0",
     "phoenix": "link:../deps/phoenix",
     "phoenix_html": "link:../deps/phoenix_html",
-    "phoenix_live_view": "link:../phoenix_live_view",
+    "phoenix_live_view": "link:../deps/phoenix_live_view",
     "solid-apexcharts": "^0.3.4",
     "solid-js": "^1.8.18",
     "topbar": "^3.0.0"

@@ -12,13 +12,11 @@ export const getCrypto = (ctx, socketRef, channelRef) => {
   return function CryptoTable(props) {
     const { crypto } = props;
 
+    // store in a ref to remove it when the component is unmounted in the hook
     socketRef.current = cryptoSocket(crypto);
-
     channelRef.current = useChannel(userSocket, `currency:${crypto}`);
 
     createEffect(() => {
-      // store the websocket connection in a ref
-
       socketRef.current.onmessage = ({ data }) => {
         const new_data = {
           time: new Date().toLocaleTimeString(),
@@ -29,9 +27,13 @@ export const getCrypto = (ctx, socketRef, channelRef) => {
         channelRef.current.push(`currency:${crypto}`, new_data);
       };
     });
-    onCleanup(() => socketRef.current.close());
+    // LiveView seems to shadow the onCleanup
+    onCleanup(() => {
+      socketRef.current.close();
+      channelRef.current.leave();
+    });
 
-    console.log("Rendered only once");
+    console.log("Rendered once");
 
     return (
       <div>

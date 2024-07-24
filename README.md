@@ -222,7 +222,7 @@ To establish the "user socket" and channel, we firstly build the userSocket clie
 
 - connect client-side:
 
-:exclamation:note that we did not pass a "user-token" as an object in the `new Socket` constructor, but this should be the case).
+:exclamation:note that we did not pass a "user-token" as an object in the `new Socket` constructor, but this should be the case.
 
 ```js
 import { Socket } from "phoenix";
@@ -240,6 +240,8 @@ socket "/socket", SolidjsWeb.UserSocket,
 ```
 
 - define the server-side handler:
+  
+:exclamation: we should receive the "user-token" in the connect and check it.
 
 ```elixir
 # create user_socket.ex

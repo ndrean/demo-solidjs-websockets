@@ -7,18 +7,21 @@ defmodule Solidjs.Application do
 
   @impl true
   def start(_type, _args) do
+    :persistent_term.put(:photo_url, "https://picsum.photos/300/300")
+
     Solidjs.Release.migrate()
+
     children = [
       SolidjsWeb.Telemetry,
       Solidjs.Repo,
       {Ecto.Migrator,
-        repos: Application.fetch_env!(:solidjs, :ecto_repos),
-        skip: skip_migrations?()},
+       repos: Application.fetch_env!(:solidjs, :ecto_repos), skip: skip_migrations?()},
       {DNSCluster, query: Application.get_env(:solidjs, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: MyPubsub},
       {DynamicSupervisor, name: DynSup, strategy: :one_for_one},
       {Finch, name: Solidjs.Finch},
-      SolidjsWeb.Endpoint
+      SolidjsWeb.Endpoint,
+      Solidjs.ModelLoader
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

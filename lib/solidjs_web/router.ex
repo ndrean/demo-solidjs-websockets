@@ -20,12 +20,8 @@ defmodule SolidjsWeb.Router do
     live "/", MainLive, :pics
     live "/chart", MainLive, :chart
     live "/table", MainLive, :table
+    live "/image", MainLive, :image
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", SolidjsWeb do
-  #   pipe_through :api
-  # end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:solidjs, :dev_routes) do

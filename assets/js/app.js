@@ -1,4 +1,5 @@
 import "phoenix_html";
+import { imageHook } from "./imageHook.js";
 
 const csrfToken = document
   .querySelector("meta[name='csrf-token']")
@@ -8,6 +9,7 @@ const Hooks = {
   hoverCard: await import("./hoverCard.js").then((module) => module.hoverCard),
   tableHook: await import("./tableHook.js").then((module) => module.tableHook),
   chartHook: await import("./chartHook.js").then((module) => module.chartHook),
+  imageHook: await import("./imageHook.js").then((module) => module.imageHook),
 };
 
 let liveSocket;

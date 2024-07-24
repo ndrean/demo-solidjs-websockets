@@ -4,6 +4,7 @@ const [slide, setSlide] = createSignal(0);
 const [count, setCount] = createSignal(0);
 const [cryptoPrices, setCryptoPrices] = createSignal([]);
 const [data, setData] = createSignal([]);
+const [description, setDescription] = createSignal([]);
 
 const useChannel = await import("./useChannel").then(
   (module) => module.default
@@ -73,4 +74,6 @@ export default {
   data,
   setData,
   options,
+  description,
+  setDescription,
 };

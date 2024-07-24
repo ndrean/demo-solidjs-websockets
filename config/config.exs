@@ -11,8 +11,6 @@ config :solidjs,
   ecto_repos: [Solidjs.Repo],
   generators: [timestamp_type: :utc_datetime]
 
-
-
 # Configures the endpoint
 config :solidjs, SolidjsWeb.Endpoint,
   url: [host: "localhost"],
@@ -24,17 +22,16 @@ config :solidjs, SolidjsWeb.Endpoint,
   pubsub_server: MyPubsub,
   live_view: [signing_salt: "ibQz7MrX"]
 
-
-
+  config :nx, default_backend: EXLA.Backend
 # Configure esbuild (the version is required)
 # config :esbuild,
-  # version: "0.17.11"
-  # solidjs: [
-  #   args:
-  #     ~w(js/app.js --bundle --target=es2021 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
-  #   cd: Path.expand("../assets", __DIR__),
-  #   env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
-  # ]
+# version: "0.17.11"
+# solidjs: [
+#   args:
+#     ~w(js/app.js --bundle --target=es2021 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+#   cd: Path.expand("../assets", __DIR__),
+#   env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+# ]
 
 # Configure tailwind (the version is required)
 config :tailwind,

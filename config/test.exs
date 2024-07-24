@@ -17,7 +17,6 @@ config :solidjs, SolidjsWeb.Endpoint,
   secret_key_base: "5JHIMHLCmW6w3VYRG4K3Iqe34RBwK6QCAYdrvHHfkLKM6HupMC8waVP4eYutjRN9",
   server: false
 
-
 # Print only warnings and errors during test
 config :logger, level: :warning
 

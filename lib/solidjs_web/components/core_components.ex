@@ -554,6 +554,7 @@ defmodule SolidjsWeb.CoreComponents do
       <.back navigate={~p"/posts"}>Back to posts</.back>
   """
   attr :navigate, :any, required: true
+  attr :disabled, :boolean, default: false
   slot :inner_block, required: true
 
   def back(assigns) do

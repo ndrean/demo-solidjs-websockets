@@ -3,9 +3,10 @@ defmodule SolidjsWeb.UserSocket do
 
   channel "currency:*", SolidjsWeb.CurrencyChannel
   channel "counter", SolidjsWeb.CountChannel
-  
+
   @impl true
-  def connect(_params, socket) do
+  def connect(params, socket) do
+    dbg(params)
     {:ok, socket}
   end
 

@@ -10,6 +10,6 @@ defmodule Solidjs.DataContext do
   end
 
   def all_data do
-    Repo.all(from d in Data, select: d)
+    Repo.all(Data)
   end
 end

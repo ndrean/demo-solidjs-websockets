@@ -71,7 +71,7 @@ const deploy = args.includes("--deploy");
 
 // Define esbuild options
 let opts = {
-  entryPoints: ["js/app.js", "js/solidHook.js"],
+  entryPoints: ["js/app.js"],
   bundle: true,
   logLevel: "info",
   target: "es2021",

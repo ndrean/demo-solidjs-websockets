@@ -22,13 +22,14 @@ At the time of writting, you have:
 
 ```bash
 pnpm init
-pnpm add -D @tailwindcss/forms esbuild esbuild-plugin-solid tailwindcss
-pnpm add solid-js @solid-primitives/ref apexcharts solid-apexcharts ../deps/phoenix ../deps/phoenix_html ../phoenix_live_view
+pnpm add -D @tailwindcss/forms esbuild esbuild-plugin-solid tailwindcss fs
+pnpm add solid-js @solid-primitives/ref apexcharts solid-apexcharts ../deps/phoenix ../deps/phoenix_html ../deps/phoenix_live_view
 ```
 
 You should have (at the time of writing):
 
 ```json
+"type": "module",
 "devDependencies": {
   "@tailwindcss/forms": "^0.5.7",
   "esbuild": "^0.23.0",
@@ -42,7 +43,7 @@ You should have (at the time of writing):
   "apexcharts": "^3.51.0",
   "phoenix": "link:../deps/phoenix",
   "phoenix_html": "link:../deps/phoenix_html",
-  "phoenix_live_view": "link:../phoenix_live_view",
+  "phoenix_live_view": "link:../deps/phoenix_live_view",
   "solid-apexcharts": "^0.3.4",
   "solid-js": "^1.8.18",
   "topbar": "^3.0.0"
@@ -59,7 +60,7 @@ We also evaluate bundle size mapping.
 <summary>Build.js file</summary>
 
 ```js
-// new file: /assest/build.js
+// new file: /assets/build.js
 
 import { context, build } from "esbuild";
 import { solidPlugin } from "esbuild-plugin-solid";
@@ -74,7 +75,7 @@ let opts = {
   entryPoints: ["js/app.js"],
   bundle: true,
   logLevel: "info",
-  target: "es2021",
+  target: "es2022",
   outdir: "../priv/static/assets",
   external: ["*.css", "fonts/*", "images/*"],
   loader: { ".js": "jsx", ".svg": "file" },

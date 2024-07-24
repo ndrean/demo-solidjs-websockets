@@ -9,6 +9,7 @@ A small `Phoenix LiveView` app to showcase:
 - prefetching data on image hovering.
 - include a `SolidJS` component that renders a table with the WebSocket connection to an endpoint to preprend data in realtime. This component sends the data to the server via an `Elixir.Channel` where it is saved into an `SQLite` database.
 - include a `SolidJS` component that uses the lightweight Javascript charting `ApexCharts`. We visualize data sent from a WebSocket client (a server module powered by [Fresh](https://github.com/bunopnu/fresh)). He set a PubSub between the Fresh server and an `Elixir.Channel`, and then push via the Channel to the browser.
+- compare image classification with pre-trained models, BLIP server-side, mediaPipe & ML5 client-side based on RESNET.
 
 ## Esbuild plugins
 
@@ -240,7 +241,7 @@ socket "/socket", SolidjsWeb.UserSocket,
 ```
 
 - define the server-side handler:
-  
+
 :exclamation: we should receive the "user-token" in the connect "params" and check it.
 
 ```elixir
@@ -363,5 +364,3 @@ This displays:
 
 The details without ApexCharts:
 <img width="1106" alt="Screenshot 2024-07-24 at 10 02 32" src="https://github.com/user-attachments/assets/6c323f59-32f0-4dee-b8de-66b529b39ef6">
-
-
